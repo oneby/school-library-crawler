@@ -41,14 +41,14 @@ console.log(`要查找的名字：${str_arguments}`);
         names.forEach(async(text) => {
             if (text.name !== ' 查看索书号' && text.name !== '全选' && text.name !== '取消' && text.name !== 'cgrs资源') {
                 console.log(text.name);
-                const changeHref = text.href;
+                var changeHref = text.href;
                 changeHref = changeHref.slice('32').replace(/\'|,|\(|\)/g, "");
                 changeHref = 'http://reader.library.neusoft.edu.cn/book/detailBook.jsp?rec_ctrl_id=' + changeHref
                 console.log(changeHref);
                 console.log('****');
             } else if (text.name == 'cgrs资源') {
                 console.log(str_arguments);
-                const changeHref = text.href;
+                var changeHref = text.href;
                 changeHref = changeHref.slice('102').replace(/\'|\(|\)/g, "")
                 changeHref = 'http://reader.library.neusoft.edu.cn/book/detailBook.jsp?rec_ctrl_id=' + changeHref
                 console.log(changeHref);
